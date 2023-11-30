@@ -7,7 +7,7 @@ const tunnel = require("./routes/tunnel");
 // Middlewares
 const app = express();
 app.use(express.json());
-// app.use(cors())
+app.use(cors())
 // Routes
 app.use("/home", tunnel);
 
