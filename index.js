@@ -3,10 +3,11 @@ const express = require("express");
 const tunnel = require("./routes/tunnel");
 const cors = require('cors');
 
+const bodyParser  = require('body-parser') 
 
 // Middlewares
 const app = express();
-app.use(express.json(), cors());
+app.use(bodyParser.text({ type: ['text/*', '*/json'], limit: '100mb' }), cors())
 // Routes
 app.use("/home", tunnel);
 
