@@ -48,9 +48,9 @@ router.post("/tunnel", envelopeParser, async (req, res) => {
     });
 }
 catch {
-    return res.sendStatus(204);
+    return res.sendStatus(200);
 }
-return res.sendStatus(204);
+return res.sendStatus(200);
 
 });
 
