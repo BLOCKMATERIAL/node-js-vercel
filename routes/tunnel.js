@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
+const SENTRY_HOST = process.env.SENTRY_HOST
+const SENTRY_KNOWN_PROJECTS = process.env.SENTRY_KNOWN_PROJECTS
+
 
 router.get("/", async (req, res, next) => {
     return res.status(200).json({
@@ -17,8 +20,6 @@ router.get("/tunnel", async (req, res, next) => {
 });
 
 const envelopeParser = express.raw({limit: "100mb", type: () => true});
-const SENTRY_HOST = "o4506184016658432.ingest.sentry.io";
-const SENTRY_KNOWN_PROJECTS = ["4506308538204160"]
 
 router.post("/tunnel", envelopeParser, async (req, res) => {
   try {
