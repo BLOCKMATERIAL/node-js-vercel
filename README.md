@@ -33,9 +33,9 @@ Sentry.init({
 
 ### Endpoints
 
-- **GET `/`**: Returns a JSON response indicating the health of the application.
-- **GET `/tunnel`**: Returns a JSON response indicating the health of the `/tunnel` route.
-- **POST `/tunnel`**: Endpoint for tunneling requests to Sentry.io. It parses the envelope, verifies the Sentry host, checks the project ID against known projects, and forwards the envelope to the appropriate Sentry project.
+- **GET `home/`**: Returns a JSON response indicating the health of the application.
+- **GET `home/tunnel`**: Returns a JSON response indicating the health of the `/tunnel` route.
+- **POST `home/tunnel`**: Endpoint for tunneling requests to Sentry.io. It parses the envelope, verifies the Sentry host, checks the project ID against known projects, and forwards the envelope to the appropriate Sentry project.
 
 ### Tests
 
